@@ -1,0 +1,109 @@
+\documentclass[oneside,a4paper]{scrartcl}
+\usepackage[utf8]{inputenc}
+\usepackage{etoolbox}
+\usepackage{fancyhdr}
+%\usepackage{titling}
+\usepackage[page]{totalcount}
+\usepackage{palatino}
+\usepackage{graphicx}
+\usepackage{todonotes}
+\usepackage{url}
+\usepackage{tikz}
+\usetikzlibrary{positioning,arrows}
+\usepackage{listings}
+
+\renewcommand{\headrulewidth}{0pt}
+
+
+
+\title{Dokumentets titel}
+\author{Coding Pirates (afdeling)} 
+\date{Indsæt dato her}
+
+\setkomafont{title}{\normalfont\bfseries}
+\makeatletter
+\let\doctitle\@title
+\patchcmd{\@maketitle}{\titlefont\huge}{\titlefont\HUGE}{}{}
+\makeatother
+
+
+
+
+
+\fancypagestyle{cptitle}{
+	\fancyhf{}
+	\fancyhead[C]{\includegraphics[height=1.3in, keepaspectratio=true]{logo.png}}
+	\fancyfoot[C]{Side \thepage\ af \totalpages}
+}
+
+\fancypagestyle{plain}{
+	\fancyhf{}
+	\fancyhead[L]{\raisebox{-0.5\height}{\includegraphics[height=0.35in, keepaspectratio=true]{logo.png}}}
+	\fancyhead[R]{\doctitle}
+	\fancyfoot[C]{Side \thepage\ af \totalpages}
+}
+
+\pagestyle{plain}
+
+\lstdefinelanguage{JavaScript}{
+  keywords={break, case, catch, continue, debugger, default, delete,
+    do, else, false, finally, for, function, if, in, instanceof, new,
+    null, return, switch, this, throw, true, try, typeof, var, void,
+    while, with},
+  morecomment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  morestring=[b]',
+  morestring=[b]",
+  ndkeywords={class, export, boolean, throw, implements, import, this},
+  keywordstyle=\color{blue}\bfseries,
+  ndkeywordstyle=\color{darkgray}\bfseries,
+  identifierstyle=\color{black},
+  commentstyle=\color{purple}\ttfamily,
+  stringstyle=\color{red}\ttfamily,
+  sensitive=true,
+  extendedchars=true,
+literate=%
+{æ}{{\ae}}1
+{å}{{\aa}}1
+{ø}{{\o}}1
+{Æ}{{\AE}}1
+{Å}{{\AA}}1
+{Ø}{{\O}}1
+}
+
+\lstset{
+  basicstyle=\ttfamily\footnotesize,
+  keywordstyle=\bfseries,
+  captionpos=b,
+  language=JavaScript
+}
+
+\begin{document}
+\maketitle
+\thispagestyle{cptitle}
+
+% \chapter{Start}
+
+% \begin{enumerate}
+% \item Opret en bruger på \url{http://khanacademy.org}. Brug
+% evt. \url{http://da.khanacademy.org} for dansk.
+% \item Tryk på ``Subjects'' (``Emner'' på dansk)
+% \item Vælg ``Computer programming'' i menuen (``Programmering'' på dansk)
+% \item New program / Nyt program
+% \end{enumerate}
+
+\section{Første afsnit}
+Tast følgende eksempel ind:
+\begin{lstlisting}
+    var minfunktion = function() {
+    	a = b;
+    	c = d;
+    }
+\end{lstlisting}
+Eller lav en liste med bullets:
+\begin{itemize}
+	\item Første bullet
+	\item Anden bullet
+\end{itemize}
+
+\end{document}
