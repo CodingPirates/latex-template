@@ -11,21 +11,33 @@
 \usepackage{tikz}
 \usetikzlibrary{positioning,arrows}
 \usepackage{listings}
-
+\usepackage{titlesec}
 \renewcommand{\headrulewidth}{0pt}
-
-
+\usepackage{fontspec}
+\setmainfont{Georgia}
+\setsansfont{Gill Sans}
 
 \title{Dokumentets titel}
-\author{Coding Pirates (afdeling)} 
-\date{Indsæt dato her}
+\author{\sffamily Coding Pirates (afdeling)}
+\date{\sffamily Indsæt dato her}
 
-\setkomafont{title}{\normalfont\bfseries}
+\setkomafont{title}{\sffamily\bfseries}
 \makeatletter
 \let\doctitle\@title
-\patchcmd{\@maketitle}{\titlefont\huge}{\titlefont\HUGE}{}{}
+\patchcmd{\@maketitle}{\sffamily\huge}{\sffamily\HUGE}{}{}
 \makeatother
 
+\titleformat{\section}
+  {\Large\sffamily\bfseries}
+  {\thesection}
+  {1em}
+  {}
+
+\titleformat{\title}
+{\Large\sffamily\bfseries}
+{\thetitle}
+{1em}
+{}
 
 
 
